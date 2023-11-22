@@ -47,7 +47,7 @@ jobs:
       - name: Create and connect to Uffizzi Kubernetes Cluster
         uses: UffizziCloud/cluster-action@main
         with:
-          cluster-name: pr-${{ github.event.pull_request.number }}
+          cluster-name: pr-${{ github.event.pull_request.number }}-arm64
           server: https://app.uffizzi.com
       - name: Run e2e tests
         run: TEST_KUBECONFIG=/tmp/${{ steps.prep.outputs.CLUSTER }} make e2e
